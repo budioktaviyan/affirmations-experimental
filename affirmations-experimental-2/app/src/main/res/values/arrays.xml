@@ -2,8 +2,8 @@
   <string-array name="fruits">
     <item>Apple</item>
     <item>Mango</item>
-    <item>Pineapple</item>
-    <item>Grape</item>
     <item>Peach</item>
+    <item>Grape</item>
+    <item>Orange</item>
   </string-array>
 </resources>

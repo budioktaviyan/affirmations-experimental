@@ -1,29 +1,33 @@
-package id.kotlin.affirmations.main
+package id.android.affirmations.main
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import id.kotlin.affirmations.R
-import id.kotlin.affirmations.main.MainAdapter.MainHolder
+import id.android.affirmations.R
+import id.android.affirmations.main.MainAdapter.MainViewHolder
 import kotlinx.android.synthetic.main.item_main.view.*
 
-class MainAdapter(private val values: List<String>) : Adapter<MainHolder>() {
+class MainAdapter(private val values: List<String>) : Adapter<MainViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-    MainHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_main, parent, false))
+    MainViewHolder(
+      LayoutInflater.from(parent.context).inflate(
+        R.layout.item_main, parent, false
+      )
+    )
 
-  override fun onBindViewHolder(holder: MainHolder, position: Int) {
+  override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
     holder.bind(values[holder.adapterPosition])
   }
 
   override fun getItemCount() = values.count()
 
-  inner class MainHolder(private val view: View) : ViewHolder(view) {
+  inner class MainViewHolder(private val item: View) : ViewHolder(item) {
 
     fun bind(value: String) {
-      with(view) {
+      with(item) {
         tv_main.text = value
       }
     }
